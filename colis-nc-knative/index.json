@@ -1,0 +1,34 @@
+{
+  "title": "Launch colis-nc with Knative",
+  "description": "In a Minikube environment, we will launch colis-nc-api image as a Serverless Knative service using the Knative CLI",
+  "difficulty": "Intermediate",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Installing Knative",
+        "text": "step1.md"
+      },
+      {
+        "title": "Deploying colis-nc-api as a Knative service",
+        "text": "step2.md"
+      },
+      {
+        "title": "Test",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "minikube-running"
+  }
+}
