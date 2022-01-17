@@ -1,12 +1,13 @@
 In this tutorial, you will learn to:
 
-- Install [Knative](https://knative.dev/docs/) on top of [Minikube](https://minikube.sigs.k8s.io/docs/)
+- Install [Knative](https://knative.dev/docs/) on top of [Kind](https://kind.sigs.k8s.io)
 - 🚀 Deploy Colis-NC API on a Knative cluster, as a severless service
 - Call the API on a concrete example 📦
 
 # 🚀 What is Knative
 
 [Knative](https://knative.dev/docs/) is Kubernetes-based platform to deploy and manage serverless services easily.
+[Kind](https://kind.sigs.k8s.io) is an easy-to-install Kubernetes environemment for local development.
 
 # 📦 What is colis-nc
 

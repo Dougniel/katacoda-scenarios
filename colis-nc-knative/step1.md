@@ -1,6 +1,9 @@
-First, install Knative CLI :
+First, install Kind & Knative CLI :
 
 ```bash
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
+chmod +x ./kind
+mv ./kind /usr/local/bin/kind
 wget https://github.com/knative/client/releases/download/knative-v1.1.0/kn-linux-amd64
 chmod +x kn-linux-amd64
 mv kn-linux-amd64 /usr/local/bin/kn
