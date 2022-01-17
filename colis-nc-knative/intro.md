@@ -6,7 +6,7 @@ In this tutorial, you will learn to:
 
 # 🚀 What is Knative
 
-[Knative](https://knative.dev/docs/) is Kubernetes-based platform to deploy and manage serverless services easily.
+[Knative](https://knative.dev/docs/) is Kubernetes-based platform to deploy and manage serverless services easily (more in depth [here](https://www.katacoda.com/swapb/scenarios/knative-intro)).
 [Kind](https://kind.sigs.k8s.io) is an easy-to-install Kubernetes environemment for local development.
 
 # 📦 What is colis-nc
