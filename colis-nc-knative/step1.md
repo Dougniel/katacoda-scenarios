@@ -24,4 +24,4 @@ kubectl patch configmap/config-network \
   --patch '{"data":{"ingress.class":"contour.ingress.networking.knative.dev"}}'
 
 INGRESS_PORT=$(kubectl get svc envoy --namespace contour-external --output 'jsonpath={.spec.ports[?(@.port==80)].nodePort}')
-```
+```{{execute}}
