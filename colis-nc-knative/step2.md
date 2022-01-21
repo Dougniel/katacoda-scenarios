@@ -1,4 +1,4 @@
-Deploy colis-nc :
+1. Deploy colis-nc 🚀 on Knative 🧑‍🚀 :
 ```sh
 kn service create colisnc-api \
 --image optnc/colisnc-api:stable \
@@ -6,8 +6,7 @@ kn service create colisnc-api \
 --revision-name=stable
 ```{{execute}}
 
-Get URL of the service :
-`kn service describe colisnc-api -o url`{{execute}}
+🔦 _As you will see, once the service is ready, its url will appear. You can also retrieve it with `kn service describe colis-api -o url`_
 
-Call the service : 
-`curl -sS  $(kn service describe colisnc-api -o url)/colis/CA107308006SI | jq`{{execute}}
+2. Call the service 👍 : 
+`curl -sS  http://localhost:$INGRESS_PORT/colis/CA107308006SI -H "Host: $(kn service describe colis-api -o url)" | jq`{{execute}}
