@@ -28,7 +28,7 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "terminals": [{ "name": "Terminal 2", "target": "host01" }]
+    "terminals": [{ "name": "Terminal 2", "command": "echo hello !", "target": "host01" }]
   },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18"
