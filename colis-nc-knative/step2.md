@@ -6,7 +6,7 @@ kn service create colisnc-api \
 --revision-name=stable
 ```{{execute}}
 
-🔦 _As you will see, once the service is ready, its url will appear. You can also retrieve it with `kn service describe colis-api -o url`_
+🔦 _As you will see, once the service is ready, its url will appear. You can also retrieve it with `kn service describe colisnc-api -o url`{{execute}}_
 
 ☎️ Call the service :
 ```sh
