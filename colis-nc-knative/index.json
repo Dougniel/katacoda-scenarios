@@ -3,10 +3,6 @@
   "description": "In a Kubernetes environment, we will launch colis-nc-api image as a Serverless Knative service using the Knative CLI",
   "difficulty": "Intermediate",
   "time": "5 minutes",
-  "intro": {
-    "text": "intro.md",
-    "code": "launch.sh"
-  },
   "details": {
     "steps": [
       {
@@ -23,7 +19,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "code": "launch.sh"
     },
     "finish": {
       "text": "finish.md"
