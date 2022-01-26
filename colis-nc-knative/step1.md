@@ -1,4 +1,4 @@
-1. First, install Knative CLI to manage easly Knative plugin on Kubernetes 🧰 :
+## First, install Knative CLI to manage easly Knative plugin on Kubernetes 🧰 :
    
 ```bash
 wget https://github.com/knative/client/releases/download/knative-v1.1.0/kn-linux-amd64
@@ -7,7 +7,7 @@ mv kn-linux-amd64 /usr/local/bin/kn
 kn version
 ```{{execute}}
 
-1. Next install Knative Serving's core components & networking layer 🏗️ :
+## Next install Knative Serving's core components & networking layer 🏗️ :
 
 ```bash
 kubectl apply --filename https://github.com/knative/serving/releases/download/v0.19.0/serving-crds.yaml
@@ -16,7 +16,7 @@ kubectl apply --filename https://github.com/knative/net-contour/releases/downloa
 kubectl apply --filename https://github.com/knative/net-contour/releases/download/v0.19.0/net-contour.yaml
 ```{{execute}}  
 
-3. Finally, configure Knative Serving to use Contour by default and get port 👍 :
+## Finally, configure Knative Serving to use Contour by default and get port 👍 :
 
 ```bash
 kubectl patch configmap/config-network \
