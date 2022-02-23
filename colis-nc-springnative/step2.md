@@ -10,9 +10,10 @@ Maintenant, observons le temps de démarrage 🧐 :
 docker run --rm -p 8081:8080 optnc/colisnc-api:latest
 ```{{execute}}
 ⏩ Oui c'est déjà démarré en moins d'une seconde 😎
-_ℹ️ Ce gain est liée à la compilation native mais aussi et surtout à d'autres optimisations comme le fait de ne garder que le code qui est réellement utilisée et qu'il n'y ait plus d'instropection, tout ceci est d'autant plus important sur des applications Spring Boot_
 
-Passons à la mesurer de la consommation mémoire et du temps de réponse en relançant l'application en _background_ (`-d`) :
+_ℹ️ Ce gain est liée à la compilation native mais aussi et surtout à d'autres optimisations comme le fait de ne garder que le code qui est réellement utilisée et qu'il n'y ait plus d'instropection, ces optimisations sont d'autant plus visibles sur des applications Spring Boot_
+
+Passons à la mesure de la consommation mémoire et du temps de réponse en relançant l'application en _background_ (`-d`) :
 ```sh
 docker run --rm -d -p 8081:8080 optnc/colisnc-api:latest
 ```{{execute interrupt}}
