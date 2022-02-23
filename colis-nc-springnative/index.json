@@ -1,0 +1,28 @@
+{
+  "title": "Spring Native : gains",
+  "description": "Mise en évidence des gains entre l'application Colis Nc API entre la version native et la version normale",
+  "difficulty": "Intermediate",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Mesures sur Colis-Nc API - version classique (non-native)",
+        "text": "step1.md"
+      },
+      {
+        "title": "Mesures sur Colis-Nc API - version Spring Native",
+        "text": "step2.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "init.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}
