@@ -6,11 +6,11 @@
   "details": {
     "steps": [
       {
-        "title": "Mesures sur Colis-Nc API - version classique (non-native)",
+        "title": "Version classique (non-native)",
         "text": "step1.md"
       },
       {
-        "title": "Mesures sur Colis-Nc API - version Spring Native",
+        "title": "Version Spring Native",
         "text": "step2.md"
       }
     ],
