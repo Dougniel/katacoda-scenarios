@@ -23,9 +23,3 @@ Une fois l'application up, vous devez avoir la réponse suivante :
     "status": "UP"
 }
 ```
-
-Pour avoir tous les détails de l'api comme sa version :
-
-```
-http :8080/actuator/info
-```{{execute}}

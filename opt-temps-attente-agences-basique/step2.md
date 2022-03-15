@@ -8,9 +8,9 @@ Récupérer les détails d'une agence en particulier :
 http :8080/temps-attente/agence/4161
 ```{{execute}}
 
-Avec l'utilitaire `jq` il est même très simple de récupérer une information dans un script shell 😉:
+Avec l'utilitaire `jq` il est même très simple de récupérer la valeur du champ du temps d'attente dans un script shell 😉:
 ```shell
-http :8080/temps-attente/agence/4161 | jq '.idAgence'
+http :8080/temps-attente/agence/4313 | jq '.realMaxWaitingTimeMs'
 ```{{execute}}
 
 Récupération de la liste des agences par rapport à une position géographique et un rayon 📍:
