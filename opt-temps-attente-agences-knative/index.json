@@ -1,0 +1,35 @@
+{
+  "title": "Découvrir l'API des temps d'attente OPT en Serverless",
+  "description": "Découvrir l'API des temps d'attente aux agences OPT en _Serverless_ via `Knative`",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Lancement via Docker",
+        "text": "step1.md"
+      },
+      {
+        "title": "Quelques appels d'exemple",
+        "text": "step2.md"
+      },
+      {
+        "title": "Documentation de l'API",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "init.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu:2010"
+  }
+}

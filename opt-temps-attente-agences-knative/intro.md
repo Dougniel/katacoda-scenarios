@@ -1,0 +1,1 @@
+L'OPT-NC met à votre disposition [un service permettant de connaître les temps d'attente actuellement en cours dans les agences OPT](https://www.opt.nc/service/l-opt-pres-de-chez-moi-trouver-une-agence), nous allons voir comment l'utiliser simplement l'API REST
