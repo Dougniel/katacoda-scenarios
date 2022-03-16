@@ -1,0 +1,36 @@
+{
+  "title": "Lancement de opt-temps-attente-agences API avec Knative",
+  "description": "Lancement de opt-temps-attente-agences API en Serveless avec Knative dans une environnement Kubernetes",
+  "difficulty": "Intermediate",
+  "time": "10 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Installation de Knative",
+        "text": "step1.md"
+      },
+      {
+        "title": "Déploiement de opt-temps-attente-agences-api en tant que service Knative",
+        "text": "step2.md"
+      },
+      {
+        "title": "Fonctionnement Severless",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "init.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "terminals": [{ "name": "Terminal 2", "target": "host01" }]
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running:1.18"
+  }
+}
