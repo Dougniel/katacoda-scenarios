@@ -1,8 +1,8 @@
 Dans ce scénario, nous allons expérimeter :
 
 - L'installation de [Knative](https://knative.dev/docs/) dans Kubernetes ☸
-- 🚀 Déploiement de l'API des temps d'attente aux agences OPT dans un cluster Knative
-- Appel de l'API ⏳ en constatant le comportement en _Serverless_
+- Le déploiement 🚀 de l'API des temps d'attente aux agences OPT dans un cluster Knative
+- L'appel de l'API ⏳ tout en observant le comportement en _Serverless_
 
 # 🚀 Qu'est-ce que Knative ?
 
