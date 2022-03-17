@@ -1,0 +1,42 @@
+{
+  "title": "Découvrir l'API des Partenaires Mobilis",
+  "description": "Découvrir l'API des partenaires Mobilis",
+  "difficulty": "Beginner",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Prérequis",
+        "text": "step1.md"
+      },
+      {
+        "title": "Démarrer l'API",
+        "text": "step2.md"
+      },
+      {
+        "title": "Documentation de l'API",
+        "text": "step3.md"
+      },
+      {
+        "title": "Requête Géolocalisées",
+        "text": "step4.md"
+      },
+      {
+        "title": "Site web",
+        "text": "step5.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}

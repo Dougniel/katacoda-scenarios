@@ -1,0 +1,35 @@
+{
+  "title": "Spring Native : gains",
+  "description": "Mise en évidence des gains entre l'application Partenaires Mobilis Nc API entre la version native et la version normale",
+  "difficulty": "Intermediate",
+  "time": "7 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Version classique (non-native)",
+        "text": "step1.md"
+      },
+      {
+        "title": "Version Spring Native",
+        "text": "step2.md"
+      },
+      {
+        "title": "Documentation de l'API & Site Web",
+        "text": "step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "init.sh"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu:2004"
+  }
+}
