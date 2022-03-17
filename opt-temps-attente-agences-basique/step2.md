@@ -15,7 +15,7 @@ http :8080/temps-attente/agence/4313 | jq '.realMaxWaitingTimeMs'
 
 Récupération de la liste des agences par rapport à une position géographique et un rayon 📍:
 ```shell
-http :8080/temps-attente/agences \
+http GET :8080/temps-attente/agences \
     lon=166.4260482788086 \
     lat=-22.25097078275085 \
     distanceInMeters=3000
