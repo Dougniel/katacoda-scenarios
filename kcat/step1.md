@@ -1,17 +1,17 @@
 Installation de kafkacat
 
-```sh
-apt install -y kafkacat
 ```
+apt install -y kafkacat
+```{{execute}}
 
 Installation Kafka
 
-```sh
+```
 docker run --rm -d --net host ubuntu/zookeeper:latest
 docker run --rm -d --net host ubuntu/kafka:latest
-```
+```{{execute}}
 
 Vérification :
-```sh
-kafkacat -b localhost:9092 -L
 ```
+kafkacat -b localhost:9092 -L
+```{{execute}}
