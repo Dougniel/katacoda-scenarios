@@ -1,7 +1,7 @@
 {
   "title": "KafkaCat pour pousser dans Kafka 🏋️",
   "description": "Utilisation d'outils existants tel que Kcat pour intégrer de données depuis des fichiers vers Kafka",
-  "difficulty": "Avancée",
+  "difficulty": "Intermediate",
   "time": "10 minutes",
   "details": {
     "steps": [
@@ -26,6 +26,6 @@
     "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "ubuntu:2204"
+    "imageid": "ubuntu:2004"
   }
 }
