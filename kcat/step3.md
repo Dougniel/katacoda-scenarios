@@ -9,7 +9,7 @@ cat entreprises.csv \
 Consommer les messages avec Kafkacat ⬇️ : 
 ```
 kafkacat -b localhost:9092 -C -t entreprises.csv -o begin \
-   | batcat -r :5 -l csv
+   | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}_
 > ☝️ utilisation de l'option `-C` pour **c**onsommer des messages, `-o begin` pour se positionner au début du topic
 

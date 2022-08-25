@@ -8,12 +8,17 @@ C'est un fichier Excel, il faut donc le transformer en CSV : [`xslx2csv`](https:
 
 On jette un oeil au début du CSV 🧐 :
 ```
-xlsx2csv entreprises.xlsx | head | column -t -s, | less -S
+xlsx2csv entreprises.xlsx \
+    | head \
+    | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
 
 Sans l'entête cette fois (via un `tail`) :
 ```
-xlsx2csv entreprises.xlsx | tail +7 | column -t -s, | less -S
+xlsx2csv entreprises.xlsx \
+    | tail +7 \
+    | head \
+    | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
 
 Les date ne sont pas au format [ISO88601](https://fr.wikipedia.org/wiki/ISO_8601) 🤔
@@ -23,7 +28,7 @@ Les date ne sont pas au format [ISO88601](https://fr.wikipedia.org/wiki/ISO_8601
 xlsx2csv entreprises.xlsx \
     | tail +7 \
     | sed -E 's,([0-9]{2}).([0-9]{2}).([0-9]{4}),\3-\2-\1,g' \
-    | column -t -s, | less -S
+    | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
 
 💾 Enfin, sauvegarde dans un fichier pour simplifier les commandes à venir :
