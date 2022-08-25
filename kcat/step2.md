@@ -11,12 +11,12 @@ apt install -y xlsx2csv && clear
 
 Conversion en csv :
 ```
-xlsx2csv entreprises.xlsx | tail +7 | head
+xlsx2csv entreprises.xlsx | tail +7 > entreprises.csv
 ```{{execute}}
 
 Intégration du CSV avec kafkacat : 
 ```
-xlsx2csv entreprises.xlsx | tail +8 | kafkacat -b localhost:9092 -P -t entreprises.csv
+cat entreprises.csv | kafkacat -b localhost:9092 -P -t entreprises.csv
 ```{{execute}}
 
 Visualisation sur Kowl : {{TRAFFIC_HOST1_8080}}/topics/entreprises.csv

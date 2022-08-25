@@ -1,16 +1,12 @@
-Installation de [miller](https://github.com/johnkerl/miller), l'outil ligne de commande pour manipuler les CSV et de [jq](https://stedolan.github.io/jq/) : 
+Conversion en JSON (via Python) : 
 ```
-apt install -y miller jq
-```{{execute}}
-
-Conversion en JSON avec miller : 
-```
-xlsx2csv entreprises.xlsx | tail +7 | mlr --icsv --ojson head | jq
+alias csv2json="python -c 'import csv, json, sys; print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'"
+head entreprises.csv | csv2json | jq | head
 ```{{execute}}
 
 Intégration du CSV avec kafkacat : 
 ```
-xlsx2csv entreprises.xlsx  | tail +7 | mlr --icsv --ojson cat | kafkacat -b localhost:9092 -P -t entreprises.json
+cat entreprises.csv | csv2json | jq -jrc '.[] | (.RID7|tostring+";"),.,"\n"' | kafkacat -b localhost:9092 -P -K ";" -t entreprises.json
 ```{{execute}}
 
 Visualisation sur Kowl : {{TRAFFIC_HOST1_8080}}/topics/entreprises.json
