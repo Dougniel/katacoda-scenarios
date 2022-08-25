@@ -12,7 +12,8 @@ head entreprises.csv | csv2json | jq
 
 Intégration du JSON avec RID7 en tant que clé (via `jq`) 🚀 : 
 ```sh
-cat entreprises.csv | csv2json \ 
+cat entreprises.csv \
+    | csv2json \
     | jq -jrc '.[] | (.RID7|tostring + ";"), ., "\n"' \
     | kafkacat -b localhost:9092 -P -K ";" -t entreprises.json
 ```{{execute}}
