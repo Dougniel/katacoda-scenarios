@@ -4,3 +4,6 @@ Si vous avez apprécié cette initiative :
 
 - Likez le scénario
 - Partagez-le sur Twitter en nous taggant [`@OPT_NC`](https://twitter.com/OPT_NC)
+
+D'autres resources intéressantes : 
+- csvkit, miller

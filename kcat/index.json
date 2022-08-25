@@ -20,6 +20,10 @@
       {
         "title": "✨ Intégration JSON à partir d'un CSV",
         "text": "step4.md"
+      },
+      {
+        "title": "💄 Aller plus loin : mise en forme des données",
+        "text": "step5.md"
       }
     ],
     "intro": {
