@@ -7,7 +7,8 @@ _☝️ utilisation de l'option `-P` pour produire un message depuis le **stdin*
 
 👉🏼 [Voir sur Kowl 🤩]({{TRAFFIC_HOST1_8080}}/topics/entreprises.csv)
 
-Utilisation de RID7 comme clé de message (utile notamment dans les topics qui sont en _COMPACT_) 🚀 🚀 :
+Utilisation de RID7 comme clé de message 🚀 🚀:
+_☝️ utile notamment dans les topics qui sont en **COMPACT**_
 ```
 cat entreprises.csv \
    | awk -F"," '{print $2 ";" $0}' \
