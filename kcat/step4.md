@@ -1,9 +1,8 @@
 Script de conversion en JSON (via Python) : 
 ```
-alias csv2json="python -c '
-    import csv, json, sys; 
-    print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))
-'"
+alias csv2json="python -c \
+'import csv, json, sys; 
+print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'"
 ```{{execute}}
 
 Essai à blanc 🔫 :
