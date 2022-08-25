@@ -1,16 +1,35 @@
-Fichier d'exemple : liste des entreprises de l'ISEE
-
+⬇️ Fichier d'exemple : récupération de la liste des entreprises de l'ISEE 🏢
 ```
 curl https://www.isee.nc/component/phocadownload/category/10-ridet?download=2008:liste-d-entreprises-en-open-data \
     -o entreprises.xlsx
 ```{{execute}}
 
 C'est un fichier Excel, il faut donc le transformer en CSV : [`xslx2csv`](https://manpages.ubuntu.com/manpages/bionic/man1/xlsx2csv.1.html) :
+
+On jette un oeil au début du CSV 🧐 :
 ```
-xlsx2csv entreprises.xlsx | tail +7 > entreprises.csv
+xlsx2csv entreprises.xlsx | head | colomn -t -s, | less -S
 ```{{execute}}
 
-Visu des 5 première lignes 🧐 :
+Sans l'entête cette fois (via un `tail`) :
 ```
-batcat -r :5 entreprises.csv
+xlsx2csv entreprises.xlsx | tail +7 | colomn -t -s, | less -S
+```{{execute}}
+
+Les date ne sont pas au format [ISO88601](https://fr.wikipedia.org/wiki/ISO_8601) 🤔
+
+☝️ Cela peut être résolu avec la commande `sed` :
+```
+xlsx2csv entreprises.xlsx \
+    | tail +7 \
+    | sed -E 's,([0-9]{2}).([0-9]{2}).([0-9]{4}),\3-\2-\1,g' \
+    | colomn -t -s, | less -S
+```{{execute}}
+
+💾 Enfin, sauvegarde dans un fichier pour simplifier les commandes à venir :
+```
+xlsx2csv entreprises.xlsx \
+    | tail +7 \
+    | sed -E 's,([0-9]{2}).([0-9]{2}).([0-9]{4}),\3-\2-\1,g' \
+    > entreprises.csv
 ```{{execute}}

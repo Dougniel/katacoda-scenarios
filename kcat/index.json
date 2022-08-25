@@ -6,23 +6,23 @@
   "details": {
     "steps": [
       {
-        "title": "\uD83D\uDC49 Prérequis",
+        "title": "🧰 Installation des prérequis",
         "text": "step1.md"
       },
       {
-        "title": "🚶 Premiers pas : récupération d'un CSV",
+        "title": "👨🏻‍💻 Préparation du jeu de données",
         "text": "step2.md"
       },
       {
-        "title": " 🚀 Intégration du CSV dans Kafka",
+        "title": " 🚀 Intégration en CSV dans Kafka",
         "text": "step3.md"
       },
       {
-        "title": "✨ Intégration JSON à partir d'un CSV",
+        "title": "✨ Intégration en JSON depuis le CSV",
         "text": "step4.md"
       },
       {
-        "title": "💄 Aller plus loin : mise en forme des données",
+        "title": "🍰 Bonus : en mode dela ⚡️",
         "text": "step5.md"
       }
     ],
