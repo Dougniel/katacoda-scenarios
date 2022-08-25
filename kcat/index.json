@@ -10,11 +10,11 @@
         "text": "step1.md"
       },
       {
-        "title": "🚶 Premiers pas : intégration d'un CSV brut",
+        "title": "🚶 Premiers pas : intégration d'un CSV",
         "text": "step2.md"
       },
       {
-        "title": "✨Intégration d'un CSV en JSON",
+        "title": "✨ Intégration JSON à partir d'un CSV",
         "text": "step3.md"
       }
     ],

@@ -16,10 +16,10 @@ Essai à blanc :
 head entreprises.csv | csv2json | jq
 ```{{execute}}
 
-Intégration du CSV avec kafkacat : 
+Intégration du JSON avec RID7 en tant que clé (via `jq`) : 
 ```sh
 cat entreprises.csv | csv2json \ 
-    | jq -jrc '.[] | (.RID7|tostring+";"),.,"\n"' \ # RID7 en tant que clé
+    | jq -jrc '.[] | (.RID7|tostring + ";"), ., "\n"' \ # RID7;{..}
     | kafkacat -b localhost:9092 -P -K ";" -t entreprises.json
 ```{{execute}}
 

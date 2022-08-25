@@ -16,4 +16,4 @@ Vérification :
 ```
 kafkacat -b localhost:9092 -L
 ```{{execute}}
-_ℹ️ Kafkacat à quelques fonctions d'aministration basiques, pour des fonctions plus avancées 👉🏼 [kafkactl](https://github.com/deviceinsight/kafkactl)
+_ℹ️ Kafkacat à quelques fonctions d'aministration basiques, pour des fonctions plus avancées 👉🏼 [kafkactl](https://github.com/deviceinsight/kafkactl)_
