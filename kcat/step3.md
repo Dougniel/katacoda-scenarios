@@ -1,26 +1,18 @@
-Install de [jq](https://github.com/stedolan/jq) : 
+
+Intégration du CSV avec kafkacat 🚀 : 
 ```
-apt install -y jq && clear
+cat entreprises.csv | kafkacat -b localhost:9092 -P -t entreprises.csv
 ```{{execute}}
+_☝️ utilisation de l'option `-P` pour produire un message depuis le **stdin**_
 
-Script de conversion en JSON (via Python) : 
+👉🏼 [Voir sur Kowl 🤩]({{TRAFFIC_HOST1_8080}}/topics/entreprises.csv)
+
+Utilisation de RID7 comme clé de message (utile notamment dans les topics qui sont en _COMPACT_) 🚀 🚀 :
 ```
-alias csv2json="python -c '
-    import csv, json, sys; 
-    print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))
-'"
+cat entreprises.csv \
+   | awk -F"," '{print $2 ";" $0}' \
+   | kafkacat -b localhost:9092 -P -K ";" -t entreprises.csv
 ```{{execute}}
+_☝️ utilisation de l'option `-K` pour indiquer le séparateur entre la clé et la valeur du message_
 
-Essai à blanc :
-```
-head entreprises.csv | csv2json | jq
-```{{execute}}
-
-Intégration du JSON avec RID7 en tant que clé (via `jq`) : 
-```sh
-cat entreprises.csv | csv2json \ 
-    | jq -jrc '.[] | (.RID7|tostring + ";"), ., "\n"' \ # RID7;{..}
-    | kafkacat -b localhost:9092 -P -K ";" -t entreprises.json
-```{{execute}}
-
-👉🏼 [Voir sur Kowl 🤩]({{TRAFFIC_HOST1_8080}}/topics/entreprises.json)
+👉🏼 [Voir sur Kowl 🤩]({{TRAFFIC_HOST1_8080}}/topics/entreprises.csv)

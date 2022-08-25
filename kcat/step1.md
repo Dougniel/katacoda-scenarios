@@ -1,7 +1,6 @@
-Installation de kafkacat
-
+Installation de kafkacat, [`xslx2csv`](https://manpages.ubuntu.com/manpages/bionic/man1/xlsx2csv.1.html), [batcat](https://github.com/sharkdp/bat), [jq](https://github.com/stedolan/jq)..
 ```
-apt install -y kafkacat
+apt install -y kafkacat xlsx2csv bat jq 
 ```{{execute}}
 
 Installation Kafka

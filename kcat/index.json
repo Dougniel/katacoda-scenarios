@@ -10,12 +10,16 @@
         "text": "step1.md"
       },
       {
-        "title": "🚶 Premiers pas : intégration d'un CSV",
+        "title": "🚶 Premiers pas : récupération d'un CSV",
         "text": "step2.md"
       },
       {
-        "title": "✨ Intégration JSON à partir d'un CSV",
+        "title": " 🚀 Intégration du CSV dans Kafka",
         "text": "step3.md"
+      },
+      {
+        "title": "✨ Intégration JSON à partir d'un CSV",
+        "text": "step4.md"
       }
     ],
     "intro": {
