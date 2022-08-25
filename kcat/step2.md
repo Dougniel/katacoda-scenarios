@@ -27,6 +27,7 @@ Les date ne sont pas au format [ISO88601](https://fr.wikipedia.org/wiki/ISO_8601
 ```
 xlsx2csv entreprises.xlsx \
     | tail +7 \
+    | head \
     | sed -E 's,([0-9]{2}).([0-9]{2}).([0-9]{4}),\3-\2-\1,g' \
     | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
