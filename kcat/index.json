@@ -1,5 +1,5 @@
 {
-  "title": "KafkaCat pour pousser dans Kafka 🏋️",
+  "title": "KafkaCat pour pousser 🏋️ dans Kafka",
   "description": "Utilisation d'outils existants tel que Kcat pour intégrer de données depuis des fichiers vers Kafka",
   "difficulty": "Intermediate",
   "time": "10 minutes",
@@ -10,8 +10,12 @@
         "text": "step1.md"
       },
       {
-        "title": "⚙️ Premiers pas",
+        "title": "🚶 Premiers pas : intégration d'un CSV brut",
         "text": "step2.md"
+      },
+      {
+        "title": "✨Intégration d'un CSV en JSON",
+        "text": "step3.md"
       }
     ],
     "intro": {
