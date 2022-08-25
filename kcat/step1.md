@@ -14,4 +14,4 @@ docker run --rm -d --net host -e KAFKA_BROKERS=localhost:9092 quay.io/cloudhut/k
 ```
 kafkacat -b localhost:9092 -L
 ```{{execute}}
-> ℹ️ Kafkacat à quelques fonctions d'aministration basiques, pour des fonctions plus avancées 👉🏼 [kafkactl](https://github.com/deviceinsight/kafkactl)
+> <small>ℹ️ Kafkacat à quelques fonctions d'aministration basiques, pour des fonctions plus avancées 👉🏼 [kafkactl](https://github.com/deviceinsight/kafkactl)</small>
