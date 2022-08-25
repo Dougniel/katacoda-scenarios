@@ -1,33 +1,33 @@
 Intégration du CSV avec kafkacat 🚀 : 
 ```
 cat entreprises.csv \
-   | tail +1
+   | tail +1 \
    | kafkacat -b localhost:9092 -P -t entreprises.csv
 ```{{execute}}
-> `-P` pour produire un message depuis le **stdin**
+> <small>`-P` pour produire un message depuis le **stdin**</small>
 
 Consommer les messages avec Kafkacat ⬇️ : 
 ```
 kafkacat -b localhost:9092 -C -t entreprises.csv -o begin \
    | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
-> `-C` pour **c**onsommer des messages, `-o begin` pour se positionner au début du topic
+> <small>`-C` pour **c**onsommer des messages, `-o begin` pour se positionner au début du topic</small>
 
 Compter les messages avec Kafkacat :
 ```
 kafkacat -b localhost:9092 -C -t entreprises.csv -o begin -e | wc -l
 ```{{execute}}
-> `-e` pour quiter lorsqu'il n'y à plus de messages
+> <small>`-e` pour quiter lorsqu'il n'y à plus de messages</small>
 
 👉🏼 [Voir sur Kowl 🤩]({{TRAFFIC_HOST1_8080}}/topics/entreprises.csv)
 
 Spécifier une clé de message avec `jq` 🚀:
 ```
 cat entreprises.csv \
-   | tail +1
+   | tail +1 \
    | awk -F"," '{print $2 ";" $0}' \
    | kafkacat -b localhost:9092 -P -K ";" -t entreprises.csv
 ```{{execute}}
-> `-K` pour indiquer le séparateur entre la clé et la valeur du message
+> <small>`-K` pour indiquer le séparateur entre la clé et la valeur du message</small>
 
 👉🏼 [Voir sur Kowl 🤩]({{TRAFFIC_HOST1_8080}}/topics/entreprises.csv)
