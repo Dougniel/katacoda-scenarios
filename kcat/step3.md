@@ -1,7 +1,7 @@
 Intégration du CSV avec kafkacat 🚀 : 
 ```
 cat entreprises.csv \
-   | tail +1 \
+   | tail +2 \
    | kafkacat -b localhost:9092 -P -t entreprises.csv
 ```{{execute}}
 > <small>`-P` pour produire un message depuis le **stdin**</small>
@@ -26,7 +26,7 @@ kafkacat -b localhost:9092 -C -t entreprises.csv -o begin -e \
 Spécifier une clé de message avec `jq` 🚀:
 ```
 cat entreprises.csv \
-   | tail +1 \
+   | tail +2 \
    | awk -F"," '{print $2 ";" $0}' \
    | kafkacat -b localhost:9092 -P -K ";" -t entreprises.csv
 ```{{execute}}
