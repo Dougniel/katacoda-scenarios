@@ -3,7 +3,7 @@ Script de conversion en JSON (via Python) :
 clear
 alias csv2json="python -c \
 'import csv, json, sys; 
-print(json.dumps([dict(r) for r in csv.DictReader(sys.stdin)]))'"
+for r in csv.DictReader(sys.stdin): print(json.dumps(dict(r)))'"
 ```{{execute}}
 
 Essai à blanc 🔫 :
@@ -15,7 +15,7 @@ Intégration du JSON avec RIDET en tant que clé (via `jq`) 🚀 :
 ```
 cat entreprises.csv \
     | csv2json \
-    | jq -jrc '.[] | (.RID7|tostring + ";"), ., "\n"' \
+    | jq -jrc '(.RID7|tostring + ";"), ., "\n"' \
     | kafkacat -b localhost:9092 -P -K ";" -t entreprises.json
 ```{{execute}}
 

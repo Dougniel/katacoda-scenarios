@@ -10,8 +10,7 @@ cat entreprises.csv \
 
 Consommer les messages avec Kafkacat ⬇️ : 
 ```
-kafkacat -b localhost:9092 -C -t entreprises.csv -o begin \
-   | head \
+kafkacat -b localhost:9092 -C -t entreprises.csv -o begin -c 10 \
    | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
 > <small>`-C` pour **c**onsommer des messages</small>

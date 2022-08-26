@@ -7,6 +7,7 @@ Le _delta_ peut-être une solution, à condition que ça reste simple.
 
 `+` Simulation d'une **création** dans nu nouveau fichier
 ```
+clear
 cp entreprises.csv nouveau.csv
 cat <<EOF >> nouveau.csv
 2022-08-26,1234567,NOUVELLE SOCIETE DE NOUVELLE,Société à responsabilité limitée,3832Z,Récupération de déchets triés,38,"Collecte, traitement et élimination des déchets ; récupération",E,"Production et distribution d'eau ; assainissement, gestion des déchets et dépollution",18,Nouméa,,province Sud,non,022-08-26
@@ -36,7 +37,7 @@ comm -23 <(sort nouveau.csv) <(sort entreprises.csv ) \
 sed -i /1000041/d nouveau.csv
 ```{{execute}}
 
-Le cas d'une suppression est différent, pour ne pas confondre une modification et une suppression on séléection la colonne avec le RIDET: 
+Le cas d'une **suppression** est différent, pour ne pas confondre une modification et une suppression on séléection la colonne avec le RIDET: 
 ```
 comm -13 \
     <(cut -d "," -f 2 nouveau.csv | sort) \
