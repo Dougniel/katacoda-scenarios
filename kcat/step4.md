@@ -11,7 +11,7 @@ Essai à blanc 🔫 :
 head entreprises.csv | csv2json | jq
 ```{{execute}}
 
-Intégration du JSON avec RID7 en tant que clé (via `jq`) 🚀 : 
+Intégration du JSON avec RIDET en tant que clé (via `jq`) 🚀 : 
 ```
 cat entreprises.csv \
     | csv2json \

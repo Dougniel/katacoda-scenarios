@@ -5,13 +5,7 @@ Faire du _full_, ça rassure mais ce n'est pas toujours le plus efficace globale
 Le _delta_ peut-être une solution, à condition que ça reste simple.
 👉🏼 Nous allons voir une des implémentations possible : comparaison du dernier fichier avec le nouveau
 
-Pour commencer, on prépare un jeu de données : 
-- sauvegarde du csv
-```
-clear
-cp entreprises.csv precedent.csv
-```{{execute}}
-- simulation d'une **création** d'entreprise sur le fichier actuel
+`+` Simulation d'une **création** dans nu nouveau fichier
 ```
 cp entreprises.csv nouveau.csv
 cat <<EOF >> nouveau.csv
@@ -19,13 +13,13 @@ cat <<EOF >> nouveau.csv
 EOF
 ```{{execute}}
 
-Pour détecter la nouvelle ligne, une solution est la commande `comm` :
+Pour détecter la nouvelle ligne, une solution est la commande `comm` + `sort` :
 ```
-comm -23 nouveau.csv precedent.csv
+comm -23 <(sort nouveau.csv) <(sort entreprises.csv ) \
+    | column -t -s, | cut -c -$COLUMNS 
 ```{{execute}}
-> <small>si l'ordre des données chaneg d'un fichier à un autre : `grep -vFxf precedent.csv nouveau.csv`</small>
 
-Pour simuler le cas d'une modification :
+`≠` Pour simuler le cas d'une **modification** :
 ```
 sed -i 's/,OFFICE DES POSTES ET TELECOMMUNICATIONS,/,OPT,/g' nouveau.csv
 ```{{execute}}
@@ -33,7 +27,18 @@ sed -i 's/,OFFICE DES POSTES ET TELECOMMUNICATIONS,/,OPT,/g' nouveau.csv
 Le même `grep` permet aussi de détecter les modifications :
 Pour détecter la nouvelle ligne, on peut utiliser un `grep` :
 ```
-comm -23 nouveau.csv precedent.csv
+comm -23 <(sort nouveau.csv) <(sort entreprises.csv ) \
+    | column -t -s, | cut -c -$COLUMNS 
 ```{{execute}}
 
+`-` Simulation d'une suppression :
+```
+sed -i /1000041/d nouveau.csv
+```{{execute}}
 
+Le cas d'une suppression est différent, pour ne pas confondre une modification et une suppression on séléection la colonne avec le RIDET: 
+```
+comm -13 \
+    <(cut -d "," -f 2 nouveau.csv | sort) \
+    <(cut -d "," -f 2 entreprises.csv | sort)
+```{{execute}}
