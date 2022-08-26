@@ -1,5 +1,6 @@
 ⬇️ Fichier d'exemple : récupération de la liste des entreprises de l'ISEE 🏢
 ```
+clear
 curl https://www.isee.nc/component/phocadownload/category/10-ridet?download=2008:liste-d-entreprises-en-open-data \
     -o entreprises.xlsx
 ```{{execute}}

@@ -1,10 +1,12 @@
 Intégration du CSV avec kafkacat 🚀 : 
 ```
+clear
 cat entreprises.csv \
    | tail +2 \
    | kafkacat -b localhost:9092 -P -t entreprises.csv
 ```{{execute}}
 > <small>`-P` pour produire un message depuis le **stdin**</small>
+> <small>`tail +2` pour ne pas envoyer l'entête</small>
 
 Consommer les messages avec Kafkacat ⬇️ : 
 ```
@@ -12,7 +14,8 @@ kafkacat -b localhost:9092 -C -t entreprises.csv -o begin \
    | head \
    | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
-> <small>`-C` pour **c**onsommer des messages, `-o begin` pour se positionner au début du topic</small>
+> <small>`-C` pour **c**onsommer des messages</small>
+> <small>`-o begin` pour se positionner au début du topic</small>
 
 Compter les messages avec Kafkacat :
 ```

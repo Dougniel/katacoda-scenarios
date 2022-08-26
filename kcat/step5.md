@@ -8,17 +8,32 @@ Le _delta_ peut-être une solution, à condition que ça reste simple.
 Pour commencer, on prépare un jeu de données : 
 - sauvegarde du csv
 ```
+clear
 cp entreprises.csv precedent.csv
 ```{{execute}}
 - simulation d'une **création** d'entreprise sur le fichier actuel
 ```
-cat <<EOF  >> entreprises.csv
+cp entreprises.csv nouveau.csv
+cat <<EOF >> nouveau.csv
 2022-08-26,1234567,NOUVELLE SOCIETE DE NOUVELLE,Société à responsabilité limitée,3832Z,Récupération de déchets triés,38,"Collecte, traitement et élimination des déchets ; récupération",E,"Production et distribution d'eau ; assainissement, gestion des déchets et dépollution",18,Nouméa,,province Sud,non,022-08-26
 EOF
 ```{{execute}}
 
+Pour détecter la nouvelle ligne, une solution est la commande `comm` :
+```
+comm -23 nouveau.csv precedent.csv
+```{{execute}}
+> <small>si l'ordre des données chaneg d'un fichier à un autre : `grep -vFxf precedent.csv nouveau.csv`</small>
+
+Pour simuler le cas d'une modification :
+```
+sed -i 's/,OFFICE DES POSTES ET TELECOMMUNICATIONS,/,OPT,/g' nouveau.csv
+```{{execute}}
+
+Le même `grep` permet aussi de détecter les modifications :
 Pour détecter la nouvelle ligne, on peut utiliser un `grep` :
 ```
-grep -vFxf precedent.csv entreprises.csv
+comm -23 nouveau.csv precedent.csv
 ```{{execute}}
+
 
