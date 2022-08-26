@@ -19,8 +19,3 @@ cat entreprises.csv \
 ```{{execute}}
 
 👉🏼 [Voir sur Kowl 🤩]({{TRAFFIC_HOST1_8080}}/topics/entreprises.json)
-
-Consulter/consommer les messages avec Kafkacat 🤓 :
-```
-kafkacat -b localhost:9092 -C -t entreprises.json -o begin -e | head | jq
-```{{execute}}_

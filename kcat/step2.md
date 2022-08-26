@@ -4,14 +4,12 @@ curl https://www.isee.nc/component/phocadownload/category/10-ridet?download=2008
     -o entreprises.xlsx
 ```{{execute}}
 
-C'est un fichier Excel, il faut donc le transformer en CSV : [`xslx2csv`](https://manpages.ubuntu.com/manpages/bionic/man1/xlsx2csv.1.html) :
-
-On jette un oeil au début du CSV 🧐 :
+C'est un fichier Excel donc on le converti en CSV avec [`xslx2csv`](https://manpages.ubuntu.com/manpages/bionic/man1/xlsx2csv.1.html) par exemple 🧐 :
 ```
 xlsx2csv entreprises.xlsx  | head
 ```{{execute}}
 
-Sans l'entête cette fois (via un `tail`) et en formaté :
+Sans l'entête cette fois (via un `tail`) et en plus lisible (via `colums` & `cut`) :
 ```
 xlsx2csv entreprises.xlsx \
     | tail +7 \
@@ -19,9 +17,7 @@ xlsx2csv entreprises.xlsx \
     | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
 
-Les date ne sont pas au format [ISO88601](https://fr.wikipedia.org/wiki/ISO_8601) 🤔
-
-☝️ Cela peut être résolu avec la commande `sed` :
+Les date ne sont pas au format [ISO88601](https://fr.wikipedia.org/wiki/ISO_8601) 🤔.. cela peut être résolu avec une expression `sed` :
 ```
 xlsx2csv entreprises.xlsx \
     | tail +7 \

@@ -1,6 +1,6 @@
 {
   "title": "Kafkacat pour pousser 🏋️ dans Kafka",
-  "description": "Utilisation d'outils existants tel que Kcat pour intégrer de données depuis des fichiers vers Kafka",
+  "description": "Utilisation d'outils existants tel que Kcat pour intégrer efficacement des données CSV vers Kafka",
   "difficulty": "Intermediate",
   "time": "10 minutes",
   "details": {

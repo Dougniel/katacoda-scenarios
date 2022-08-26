@@ -9,13 +9,15 @@ cat entreprises.csv \
 Consommer les messages avec Kafkacat ⬇️ : 
 ```
 kafkacat -b localhost:9092 -C -t entreprises.csv -o begin \
+   | head \
    | column -t -s, | cut -c -$COLUMNS
 ```{{execute}}
 > <small>`-C` pour **c**onsommer des messages, `-o begin` pour se positionner au début du topic</small>
 
 Compter les messages avec Kafkacat :
 ```
-kafkacat -b localhost:9092 -C -t entreprises.csv -o begin -e | wc -l
+kafkacat -b localhost:9092 -C -t entreprises.csv -o begin -e \
+   | wc -l
 ```{{execute}}
 > <small>`-e` pour quiter lorsqu'il n'y à plus de messages</small>
 
